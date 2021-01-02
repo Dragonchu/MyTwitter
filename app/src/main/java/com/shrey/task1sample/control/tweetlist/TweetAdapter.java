@@ -1,4 +1,4 @@
-package com.shrey.task1sample;
+package com.shrey.task1sample.control.tweetlist;
 
 import android.content.Context;
 import android.content.res.ColorStateList;
@@ -12,6 +12,9 @@ import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
+
+import com.shrey.task1sample.R;
+import com.shrey.task1sample.model.Tweet;
 
 import java.util.ArrayList;
 

@@ -1,4 +1,5 @@
-package com.shrey.task1sample;
+
+package com.shrey.task1sample.util;
 import android.content.Context;
 import android.content.res.Resources;
 import android.os.Bundle;
@@ -16,7 +17,6 @@ import android.view.WindowManager;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
-import android.widget.ListView;
 import android.widget.TextView;
 
 import com.mikepenz.fontawesome_typeface_library.FontAwesome;
@@ -32,6 +32,9 @@ import com.mikepenz.materialdrawer.model.PrimaryDrawerItem;
 import com.mikepenz.materialdrawer.model.ProfileDrawerItem;
 import com.mikepenz.materialdrawer.model.SecondaryDrawerItem;
 import com.mikepenz.materialdrawer.model.interfaces.IProfile;
+import com.shrey.task1sample.R;
+import com.shrey.task1sample.control.tweetlist.TweetAdapter;
+import com.shrey.task1sample.model.Tweet;
 
 import java.util.ArrayList;
 
@@ -244,15 +247,15 @@ public class MainActivity extends AppCompatActivity {
 
         // Logic for list view
 
-        final ListView listview = findViewById(R.id.list);
+ //       final ListView listview = findViewById(R.id.list);
         final ArrayList<Tweet> list = new ArrayList<Tweet>();
-        list.add(new Tweet("Huilong Chu", "@Judy98", "30m", "Hey there !!", R.drawable.profile_3, "#61045F", 0, 5, 1));
-        list.add(new Tweet("Ariel Pollich", "@Ariel49", "40m", "Hey there !!", R.drawable.profile_4, "#333B2E", 4, 500, 10));
-        list.add(new Tweet("Sasha Ho", "@Makenna38", "50m", "Hey there !!", R.drawable.profile_2, "#44322E", 1, 8, 25));
-        list.add(new Tweet("Zia Burkett", "@Burketto", "1h", "Hey there !!", R.drawable.profile_1, "#3689F3", 5, 1, 5));
+//        list.add(new Tweet("Huilong Chu", "@Judy98", "30m", "Hey there !!", R.drawable.profile_3, "#61045F", 0, 5, 1));
+//        list.add(new Tweet("Ariel Pollich", "@Ariel49", "40m", "Hey there !!", R.drawable.profile_4, "#333B2E", 4, 500, 10));
+//        list.add(new Tweet("Sasha Ho", "@Makenna38", "50m", "Hey there !!", R.drawable.profile_2, "#44322E", 1, 8, 25));
+//        list.add(new Tweet("Zia Burkett", "@Burketto", "1h", "Hey there !!", R.drawable.profile_1, "#3689F3", 5, 1, 5));
 
         final TweetAdapter adapter = new TweetAdapter(this, R.layout.tweet_row, list);
-        listview.setAdapter(adapter);
+//        listview.setAdapter(adapter);
 
         // To resize the resize window when keyboard pops up
 

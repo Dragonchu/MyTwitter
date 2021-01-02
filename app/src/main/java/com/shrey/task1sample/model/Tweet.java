@@ -1,35 +1,35 @@
-package com.shrey.task1sample;
+package com.shrey.task1sample.model;
+
+import java.util.UUID;
 
 public class Tweet {
+    private UUID mId;
+
+    public UUID getId() {
+        return mId;
+    }
 
     private String name, handle, minutes, content, conImg;
     private int prof;
     private int comment, rt, like;
 
-    public Tweet() {
-
+    public  Tweet(){
+        this(UUID.randomUUID());
     }
 
-    public Tweet(String name, String handle, String minutes, String content, int prof, String conImg, int comment, int rt, int like) {
-        this.name = name;
-        this.handle = handle;
-        this.minutes = minutes;
-        this.content = content;
-        this.prof = prof;
-        this.conImg = conImg;
-        this.comment = comment;
-        this.rt = rt;
-        this.like = like;
+    public Tweet(UUID id){
+        mId = id;
+        name = "default";
+        handle = "defalut@qq.com";
+        minutes = "30";
+        content = "default";
+        conImg = "default";
+        prof = 0;
+        comment = 0;
+        rt = 0;
+        like = 0;
     }
 
-    public Tweet(String name, String handle, String minutes, String content, int prof, String conImg) {
-        this.name = name;
-        this.handle = handle;
-        this.minutes = minutes;
-        this.content = content;
-        this.prof = prof;
-        this.conImg = conImg;
-    }
 
     public String getName() {
         return name;
