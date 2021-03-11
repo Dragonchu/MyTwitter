@@ -1,46 +1,47 @@
-package com.shrey.task1sample.control.writetweet;
+package com.dragonchu.control.writetweet;
 
 import android.app.ProgressDialog;
+import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ImageButton;
-import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.android.volley.Request;
-import com.android.volley.Response;
-import com.android.volley.VolleyError;
-import com.android.volley.toolbox.StringRequest;
 import com.shrey.task1sample.R;
-import com.shrey.task1sample.database.PHPConnect;
-import com.shrey.task1sample.database.RequestHandler;
-import com.shrey.task1sample.database.TweetBaseHelper;
-import com.shrey.task1sample.model.Tweet;
+import com.dragonchu.database.TweetBaseHelper;
+import com.dragonchu.model.Tweet;
 
-import org.json.JSONException;
-import org.json.JSONObject;
-
-import java.util.HashMap;
-import java.util.Map;
+import java.sql.Timestamp;
 
 public class WriteTweetActivity extends AppCompatActivity {
+    private static final String EXTRA_NAME = "com.dragonchu.control.writetweet.username";
+    private static final String EXTRA_HANDLE = "com.dragonchu.control.writetweet.handle";
+    public static Intent newIntent(Context packageContext, String username, String email){
+        Intent intent = new Intent(packageContext, WriteTweetActivity.class);
+        intent.putExtra(EXTRA_NAME,username);
+        intent.putExtra(EXTRA_HANDLE,email);
+        return intent;
+    }
     private Button mSendButton;
     private ImageButton mBackButton;
-    private TextView mContent;
+    private EditText mContent;
     private ProgressDialog mProgressDialog;
+    private String name;
+    private String handle;
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.write_tweet);
-
+        name = getIntent().getStringExtra(EXTRA_NAME);
+        handle = getIntent().getStringExtra(EXTRA_HANDLE);
         mSendButton = (Button)findViewById(R.id.tweetBtn);
         mBackButton = (ImageButton) findViewById(R.id.backBtn);
-        mContent = (TextView)findViewById(R.id.tweetContent);
+        mContent = (EditText) findViewById(R.id.tweetContent);
         mProgressDialog = new ProgressDialog(this);
 
         mSendButton.setOnClickListener(new View.OnClickListener() {
@@ -60,7 +61,11 @@ public class WriteTweetActivity extends AppCompatActivity {
 
     private void sendTweet() {
         Tweet tweet = new Tweet();
+        tweet.setName(name);
+        tweet.setHandle(handle);
         tweet.setContent(mContent.getText().toString());
+        tweet.setMinutes(new Timestamp(System.currentTimeMillis()).toString());
         TweetBaseHelper.onAdd(this,mProgressDialog,tweet);
+        mContent.getText().clear();
     }
 }

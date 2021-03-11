@@ -12,16 +12,18 @@
         android:theme="@style/AppTheme.NoActionBar">
 
         <activity
-            android:name=".control.tweetlist.TweetsListActivity"
+            android:windowSoftInputMode="stateVisible|adjustResize"
+            android:name="com.dragonchu.control.register.RegisterActivity"
             android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".control.tweet.TweetActivity" />
-        <activity android:name=".control.writetweet.WriteTweetActivity" />
+        <activity android:name="com.dragonchu.control.tweet.TweetActivity" android:windowSoftInputMode="stateVisible|adjustResize"/>
+        <activity android:name="com.dragonchu.control.writetweet.WriteTweetActivity" android:windowSoftInputMode="stateVisible|adjustResize"/>
+        <activity android:name="com.dragonchu.control.tweetlist.TweetsListActivity" android:windowSoftInputMode="stateVisible|adjustResize"/>
+        <activity android:name="com.dragonchu.control.login.loginActivity" android:windowSoftInputMode="stateVisible|adjustResize"/>
     </application>
 
 </manifest>

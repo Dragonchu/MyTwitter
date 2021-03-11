@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.shrey.task1sample.util.MainActivity">
+    tools:context="com.dragonchu.util.MainActivity">
 
     <com.google.android.material.appbar.AppBarLayout
         android:layout_width="match_parent"
@@ -29,7 +29,7 @@
                     android:layout_width="40dp"
                     android:layout_height="40dp"
                     android:layout_marginEnd="20dp"
-                    android:src="@drawable/main_profile_1"
+                    android:src="?android:attr/listChoiceIndicatorSingle"
                     app:riv_border_color="#333333"
                     app:riv_border_width="0.1dp"
                     app:riv_corner_radius="20dp"

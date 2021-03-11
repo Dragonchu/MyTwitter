@@ -105,6 +105,7 @@
                 android:layout_marginLeft="@dimen/material_drawer_vertical_padding">
 
                 <TextView
+                    android:id="@+id/following"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:fontFamily="sans-serif"
@@ -127,6 +128,7 @@
                     android:text="Following"/>
 
                 <TextView
+                    android:id="@+id/follower"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="@dimen/material_drawer_vertical_padding"

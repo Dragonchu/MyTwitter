@@ -1,11 +1,11 @@
-package com.shrey.task1sample.control.tweet;
+package com.dragonchu.control.tweet;
 
 import android.content.Context;
 import android.content.Intent;
 
 import androidx.fragment.app.Fragment;
 
-import com.shrey.task1sample.util.SingleFragmentActivity;
+import com.dragonchu.util.SingleFragmentActivity;
 
 import java.util.UUID;
 

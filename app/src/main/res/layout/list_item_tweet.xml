@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:orientation="horizontal"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:background="@color/colorPrimary">
@@ -10,18 +9,18 @@
         android:id="@+id/profImg"
         android:layout_width="50dp"
         android:layout_height="50dp"
+        android:layout_marginStart="10dp"
         android:layout_marginTop="14dp"
         android:layout_marginEnd="10dp"
-        android:layout_marginStart="10dp"
-        android:src="@drawable/profile_1"
+        android:src="?android:attr/listChoiceIndicatorSingle"
         app:riv_corner_radius="25dp"
-        app:riv_oval="true"/>
+        app:riv_oval="true" />
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:paddingTop="10dp"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        android:paddingTop="10dp">
 
         <RelativeLayout
             android:layout_width="match_parent"
@@ -32,53 +31,48 @@
                 android:id="@+id/name"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textColor="@color/draw_head"
-                android:textStyle="bold"
+                android:layout_alignParentStart="true"
                 android:layout_margin="2.5dp"
+                android:textColor="@color/draw_head"
                 android:textSize="15sp"
-                android:layout_alignParentStart="true"/>
+                android:textStyle="bold" />
 
             <TextView
                 android:id="@+id/handle"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_margin="2.5dp"
-                android:textSize="15sp"
+                android:layout_toEndOf="@id/name"
                 android:textColor="@color/draw_description"
-                android:layout_toEndOf="@id/name"/>
+                android:textSize="15sp" />
 
             <TextView
                 android:id="@+id/dotSep"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_margin="2.5dp"
+                android:layout_toEndOf="@id/handle"
                 android:text="•"
                 android:textAlignment="center"
-                android:layout_margin="2.5dp"
-                android:textSize="15sp"
                 android:textColor="@color/draw_description"
-                android:layout_toEndOf="@id/handle"/>
+                android:textSize="15sp" />
 
             <TextView
                 android:id="@+id/min"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="30m"
                 android:layout_margin="2.5dp"
-                android:textSize="15sp"
+                android:layout_toEndOf="@id/dotSep"
+                android:text="30m"
                 android:textColor="@color/draw_description"
-                android:layout_toEndOf="@id/dotSep"/>
+                android:textSize="15sp" />
 
-            <com.mikepenz.iconics.view.IconicsTextView
-                android:id="@+id/dropDown"
-                android:layout_width="wrap_content"
+            <Spinner
+
+                android:id="@+id/spinner"
+                android:layout_width="50dp"
                 android:layout_height="wrap_content"
-                android:text="{ion_chevron_down}"
-                android:textAlignment="center"
-                android:layout_marginEnd="10dp"
-                android:layout_marginTop="3dp"
-                android:textSize="15sp"
-                android:textColor="@color/draw_description"
-                android:layout_alignParentEnd="true"/>
+                android:layout_alignParentRight="true" />
 
         </RelativeLayout>
 
@@ -86,109 +80,124 @@
             android:id="@+id/content"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="3dp"
             android:layout_marginStart="2.5dp"
-            android:textColor="@color/draw_head"
-            android:text="Hey ! How you doin' ?"
+            android:layout_marginTop="3dp"
             android:layout_marginEnd="10dp"
-            android:textSize="15sp"/>
+            android:ellipsize="end"
+            android:maxLines="3"
+            android:text="Hey ! How you doin' ?"
+            android:textColor="@color/draw_head"
+            android:textSize="15sp" />
 
         <TextView
             android:id="@+id/conImg"
             android:layout_width="match_parent"
             android:layout_height="160dp"
-            android:background="@drawable/content_round"
-            android:backgroundTint="#44322E"
             android:layout_marginTop="10dp"
+            android:layout_marginEnd="10dp"
             android:layout_marginBottom="10dp"
-            android:layout_marginEnd="10dp"/>
+            android:background="@drawable/content_round"
+            android:backgroundTint="#44322E" />
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:weightSum="4"
-            android:layout_marginBottom="10dp">
+            android:layout_marginBottom="10dp"
+            android:weightSum="4">
 
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
                 android:layout_marginStart="5dp"
+                android:layout_weight="1"
                 android:gravity="center_vertical">
 
                 <ImageView
                     android:layout_width="20dp"
                     android:layout_height="30dp"
-                    android:src="@drawable/comment"/>
+                    android:src="@drawable/comment" />
 
                 <TextView
                     android:id="@+id/txtComment"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textAlignment="center"
                     android:layout_marginStart="5dp"
-                    android:textColor="@color/draw_description"
-                    android:text="50"/>
+                    android:text="50"
+                    android:textAlignment="center"
+                    android:textColor="@color/draw_description" />
 
             </LinearLayout>
 
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
                 android:layout_marginStart="5dp"
+                android:layout_weight="1"
                 android:gravity="center_vertical">
 
                 <ImageView
                     android:layout_width="22dp"
                     android:layout_height="30dp"
-                    android:src="@drawable/rt"/>
+                    android:src="@drawable/rt" />
 
                 <TextView
                     android:id="@+id/txtRT"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textAlignment="center"
                     android:layout_marginStart="5dp"
-                    android:textColor="@color/draw_description"
-                    android:text="50"/>
+                    android:text="50"
+                    android:textAlignment="center"
+                    android:textColor="@color/draw_description" />
 
             </LinearLayout>
 
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
                 android:layout_marginStart="5dp"
+                android:layout_weight="1"
                 android:gravity="center_vertical">
 
-                <ImageView
-                    android:layout_width="20dp"
-                    android:layout_height="30dp"
-                    android:src="@drawable/like"/>
+                <FrameLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+                    <ImageView
+                        android:id="@+id/likePic"
+                        android:layout_width="20dp"
+                        android:layout_height="30dp"
+                        android:src="@drawable/like" />
+
+                    <ImageView
+                        android:id="@+id/likedPic"
+                        android:layout_width="20dp"
+                        android:layout_height="30dp"
+                        android:src="@drawable/liked"
+                        android:visibility="invisible" />
+                </FrameLayout>
 
                 <TextView
                     android:id="@+id/txtLike"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textAlignment="center"
                     android:layout_marginStart="5dp"
-                    android:textColor="@color/draw_description"
-                    android:text="50"/>
+                    android:text="50"
+                    android:textAlignment="center"
+                    android:textColor="@color/draw_description" />
 
             </LinearLayout>
 
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
                 android:layout_marginStart="5dp"
+                android:layout_weight="1"
                 android:gravity="center_vertical">
 
                 <ImageView
                     android:layout_width="20dp"
                     android:layout_height="30dp"
-                    android:src="@drawable/msg"/>
+                    android:src="@drawable/msg" />
 
             </LinearLayout>
 

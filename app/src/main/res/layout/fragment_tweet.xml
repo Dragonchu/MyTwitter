@@ -1,170 +1,229 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:orientation="horizontal"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/linearLayout2"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:background="@color/colorPrimary">
-
-    <com.makeramen.roundedimageview.RoundedImageView
-        android:id="@+id/profImg"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
-        android:layout_marginTop="14dp"
-        android:layout_marginEnd="10dp"
-        android:layout_marginStart="10dp"
-        android:src="@drawable/profile_1"
-        app:riv_corner_radius="25dp"
-        app:riv_oval="true"/>
+    android:layout_height="match_parent">
 
     <LinearLayout
-        android:layout_width="match_parent"
+        android:id="@+id/main_tweet"
+        android:layout_width="411dp"
         android:layout_height="wrap_content"
-        android:paddingTop="10dp"
-        android:orientation="vertical">
+        android:background="@color/colorPrimary"
+        android:orientation="horizontal"
+        app:layout_constraintTop_toTopOf="parent">
 
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:gravity="center_vertical">
-
-            <TextView
-                android:id="@+id/name"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textColor="@color/draw_head"
-                android:textStyle="bold"
-                android:layout_margin="2.5dp"
-                android:textSize="15sp"
-                android:layout_alignParentStart="true"/>
-
-            <TextView
-                android:id="@+id/handle"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_margin="2.5dp"
-                android:textSize="15sp"
-                android:textColor="@color/draw_description"
-                android:layout_toEndOf="@id/name"/>
-
-        </RelativeLayout>
-
-        <TextView
-            android:id="@+id/content"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="2.5dp"
-            android:layout_marginTop="3dp"
+        <com.makeramen.roundedimageview.RoundedImageView
+            android:id="@+id/profImg"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="14dp"
             android:layout_marginEnd="10dp"
-            android:text="this is fragment_tweet"
-            android:textColor="@color/draw_head"
-            android:textSize="15sp" />
-
-        <TextView
-            android:id="@+id/conImg"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
-            android:layout_marginEnd="10dp"
-            android:layout_marginBottom="10dp"
-            android:background="@drawable/content_round"
-            android:backgroundTint="#44322E" />
+            android:src="?android:attr/listChoiceIndicatorSingle" />
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:weightSum="4"
-            android:layout_marginBottom="10dp">
+            android:orientation="vertical"
+            android:paddingTop="10dp">
 
             <LinearLayout
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:layout_marginStart="5dp"
                 android:gravity="center_vertical">
 
-                <ImageView
-                    android:id="@+id/comment"
-                    android:layout_width="20dp"
-                    android:layout_height="30dp"
-                    android:src="@drawable/comment" />
-
                 <TextView
-                    android:id="@+id/txtComment"
+                    android:id="@+id/name"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textAlignment="center"
-                    android:layout_marginStart="5dp"
+                    android:layout_margin="2.5dp"
+                    android:text="name"
+                    android:textColor="@color/draw_head"
+                    android:textSize="15sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/handle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="2.5dp"
+                    android:text="email"
                     android:textColor="@color/draw_description"
-                    android:text="50"/>
+                    android:textSize="15sp" />
+
+                <FrameLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <TextView
+                        android:id="@+id/scrollup"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="show comment"
+                        android:visibility="visible" />
+
+                    <TextView
+                        android:id="@+id/scrolldown"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="show more"
+                        android:visibility="invisible" />
+                </FrameLayout>
 
             </LinearLayout>
 
-            <LinearLayout
-                android:layout_width="wrap_content"
+            <TextView
+                android:id="@+id/content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:layout_marginStart="5dp"
-                android:gravity="center_vertical">
+                android:layout_marginStart="2.5dp"
+                android:layout_marginTop="3dp"
+                android:layout_marginEnd="10dp"
+                android:text="this is fragment_tweet"
+                android:textColor="@color/draw_head"
+                android:textSize="15sp" />
 
-                <ImageView
-                    android:id="@+id/RT"
-                    android:layout_width="22dp"
-                    android:layout_height="30dp"
-                    android:src="@drawable/rt" />
+            <TextView
+                android:id="@+id/conImg"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="10dp"
+                android:layout_marginBottom="10dp"
+                android:background="@drawable/content_round"
+                android:backgroundTint="#44322E" />
 
-                <TextView
-                    android:id="@+id/txtRT"
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:weightSum="4">
+
+                <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textAlignment="center"
                     android:layout_marginStart="5dp"
-                    android:textColor="@color/draw_description"
-                    android:text="50"/>
+                    android:layout_weight="1"
+                    android:gravity="center_vertical">
 
-            </LinearLayout>
+                    <ImageView
+                        android:id="@+id/comment"
+                        android:layout_width="20dp"
+                        android:layout_height="30dp"
+                        android:src="@drawable/comment" />
 
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:layout_marginStart="5dp"
-                android:gravity="center_vertical">
+                    <TextView
+                        android:id="@+id/txtComment"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="5dp"
+                        android:text="50"
+                        android:textAlignment="center"
+                        android:textColor="@color/draw_description" />
 
-                <ImageView
-                    android:id="@+id/Like"
-                    android:layout_width="20dp"
-                    android:layout_height="30dp"
-                    android:src="@drawable/like" />
+                </LinearLayout>
 
-                <TextView
-                    android:id="@+id/txtLike"
+                <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textAlignment="center"
                     android:layout_marginStart="5dp"
-                    android:textColor="@color/draw_description"
-                    android:text="50"/>
+                    android:layout_weight="1"
+                    android:gravity="center_vertical">
 
-            </LinearLayout>
+                    <ImageView
+                        android:id="@+id/RT"
+                        android:layout_width="22dp"
+                        android:layout_height="30dp"
+                        android:src="@drawable/rt" />
 
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:layout_marginStart="5dp"
-                android:gravity="center_vertical">
+                    <TextView
+                        android:id="@+id/txtRT"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="5dp"
+                        android:text="50"
+                        android:textAlignment="center"
+                        android:textColor="@color/draw_description" />
 
-                <ImageView
-                    android:id="@+id/email"
-                    android:layout_width="20dp"
-                    android:layout_height="30dp"
-                    android:src="@drawable/msg" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="5dp"
+                    android:layout_weight="1"
+                    android:gravity="center_vertical">
+
+                    <FrameLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+
+                        <ImageView
+                            android:id="@+id/likePic"
+                            android:layout_width="20dp"
+                            android:layout_height="30dp"
+                            android:src="@drawable/like" />
+
+                        <ImageView
+                            android:id="@+id/likedPic"
+                            android:layout_width="20dp"
+                            android:layout_height="30dp"
+                            android:src="@drawable/liked"
+                            android:visibility="invisible" />
+                    </FrameLayout>
+
+                    <TextView
+                        android:id="@+id/txtLike"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="5dp"
+                        android:text="50"
+                        android:textAlignment="center"
+                        android:textColor="@color/draw_description" />
+
+                </LinearLayout>
 
             </LinearLayout>
 
         </LinearLayout>
-
     </LinearLayout>
 
-</LinearLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/comment_recycler_view"
+        android:layout_width="411dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toTopOf="@+id/write_comment"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/main_tweet"
+        app:layout_constraintVertical_bias="0.0"></androidx.recyclerview.widget.RecyclerView>
+
+    <EditText
+        android:id="@+id/write_comment"
+        android:layout_width="229dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="15dp"
+        android:alpha="45"
+        android:background="#FFFFFF"
+        android:hint="发表评论吧"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/commentBtn"
+        android:layout_width="142dp"
+        android:layout_height="26dp"
+        android:layout_marginEnd="15dp"
+        android:background="@drawable/button_circle_shape"
+        android:padding="0dp"
+        android:text="发送"
+        android:textColor="#FFFFFF"
+        android:textSize="9dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/write_comment" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

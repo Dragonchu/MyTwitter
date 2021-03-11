@@ -1,5 +1,5 @@
 
-package com.shrey.task1sample.util;
+package com.dragonchu.util;
 import android.content.Context;
 import android.content.res.Resources;
 import android.os.Bundle;
@@ -33,8 +33,8 @@ import com.mikepenz.materialdrawer.model.ProfileDrawerItem;
 import com.mikepenz.materialdrawer.model.SecondaryDrawerItem;
 import com.mikepenz.materialdrawer.model.interfaces.IProfile;
 import com.shrey.task1sample.R;
-import com.shrey.task1sample.control.tweetlist.TweetAdapter;
-import com.shrey.task1sample.model.Tweet;
+import com.dragonchu.control.tweetlist.TweetAdapter;
+import com.dragonchu.model.Tweet;
 
 import java.util.ArrayList;
 
@@ -54,9 +54,6 @@ public class MainActivity extends AppCompatActivity {
         setSupportActionBar(toolbar);
 
         toggleProf = findViewById(R.id.togglePic);
-        mSwipeRefresh = findViewById(R.id.swiperefresh);
-        mBodyMsg = findViewById(R.id.body_msg);
-        mBodyNotif = findViewById(R.id.body_notif);
         mScreenTitle = findViewById(R.id.screen_title);
         mSearchBar =findViewById(R.id.search_bar);
 

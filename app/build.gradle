@@ -4,6 +4,7 @@ android {
     compileSdkVersion 30
     defaultConfig {
         applicationId "com.shrey.task1sample"
+        vectorDrawables.useSupportLibrary = true
         minSdkVersion 19
         targetSdkVersion 30
         versionCode 1
@@ -22,6 +23,7 @@ android {
 }
 
 dependencies {
+    implementation 'androidx.swiperefreshlayout:swiperefreshlayout:1.0.0'
     implementation 'com.google.code.gson:gson:2.8.6'
     implementation "com.mikepenz:materialdrawer:6.1.0-rc01"
     implementation "com.mikepenz:iconics-core:3.2.5"
@@ -40,6 +42,7 @@ dependencies {
     implementation 'androidx.cardview:cardview:1.0.0'
     implementation 'androidx.annotation:annotation:1.1.0'
     implementation 'androidx.constraintlayout:constraintlayout:2.0.4'
+    implementation 'androidx.swiperefreshlayout:swiperefreshlayout:1.0.0'
     compile (
             [group: 'com.fasterxml.jackson.core', name: 'jackson-core', version: '2.4.1'],
             [group: 'com.fasterxml.jackson.core', name: 'jackson-annotations', version: '2.4.1'],

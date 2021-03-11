@@ -20,5 +20,11 @@
     <string name="tab_msg">Messages</string>
     <string name="title_activity_search">Task1-HPDF</string>
     <string name="title_activity_main">MainActivity</string>
+    <string name="ion_chevron_down">{ion_chevron_down}</string>
+
+    <string-array name="planets_array">
+        <item>关注</item>
+        <item>取消关注</item>
+    </string-array>
 
 </resources>
